@@ -43,7 +43,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @plan_comment.author_id %>
+        <% if @plan_comment.author.present? %>
+          <a href="/users/<%= @plan_comment.author_id %>">
+            <%= @plan_comment.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display plan_id start -->
       <dd>
-        <%= @plan_comment.plan_id %>
+        <% if @plan_comment.plan.present? %>
+          <a href="/plans/<%= @plan_comment.plan_id %>">
+            <%= @plan_comment.plan.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display plan_id end -->
 

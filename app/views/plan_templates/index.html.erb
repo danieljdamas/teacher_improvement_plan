@@ -74,7 +74,11 @@
 
         <!-- Display plan.owner_id start -->
         <td>
-          <%= plan.owner.email %>
+          <% if plan.owner.present? %>
+            <a href="/users/<%= plan.owner.id %>">
+              <%= plan.owner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display plan.owner_id end -->
 

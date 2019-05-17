@@ -68,13 +68,21 @@
 
         <!-- Display plan_comment.author_id start -->
         <td>
-          <%= plan_comment.author.email %>
+          <% if plan_comment.author.present? %>
+            <a href="/users/<%= plan_comment.author.id %>">
+              <%= plan_comment.author.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display plan_comment.author_id end -->
 
         <!-- Display plan_comment.plan_id start -->
         <td>
-          <%= plan_comment.plan.description %>
+          <% if plan_comment.plan.present? %>
+            <a href="/plans/<%= plan_comment.plan.id %>">
+              <%= plan_comment.plan.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display plan_comment.plan_id end -->
 

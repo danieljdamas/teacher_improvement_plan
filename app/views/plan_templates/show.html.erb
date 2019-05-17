@@ -56,7 +56,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @plan.owner_id %>
+        <% if @plan.owner.present? %>
+          <a href="/users/<%= @plan.owner_id %>">
+            <%= @plan.owner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 

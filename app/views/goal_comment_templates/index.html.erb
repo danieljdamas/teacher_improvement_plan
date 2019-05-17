@@ -68,13 +68,21 @@
 
         <!-- Display goal_comment.author_id start -->
         <td>
-          <%= goal_comment.author.email %>
+          <% if goal_comment.author.present? %>
+            <a href="/users/<%= goal_comment.author.id %>">
+              <%= goal_comment.author.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display goal_comment.author_id end -->
 
         <!-- Display goal_comment.goal_id start -->
         <td>
-          <%= goal_comment.goal.description %>
+          <% if goal_comment.goal.present? %>
+            <a href="/goals/<%= goal_comment.goal.id %>">
+              <%= goal_comment.goal.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display goal_comment.goal_id end -->
 

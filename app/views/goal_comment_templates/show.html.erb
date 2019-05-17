@@ -43,7 +43,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @goal_comment.author_id %>
+        <% if @goal_comment.author.present? %>
+          <a href="/users/<%= @goal_comment.author_id %>">
+            <%= @goal_comment.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display goal_id start -->
       <dd>
-        <%= @goal_comment.goal_id %>
+        <% if @goal_comment.goal.present? %>
+          <a href="/goals/<%= @goal_comment.goal_id %>">
+            <%= @goal_comment.goal.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display goal_id end -->
 
