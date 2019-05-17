@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Coaches
+
+    <a data-toggle="collapse" href="#plan_coaches_new_form">
+      Add coach invitation
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @plan.coaches.each do |coach_invitation| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/coach_invitations/<%= coach_invitation.id %>">
+          <%= coach_invitation.coach_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_coach_invitation_from_plan/<%= coach_invitation.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="plan_coaches_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

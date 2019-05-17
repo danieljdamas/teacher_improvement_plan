@@ -55,6 +55,22 @@ class GoalCommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_author
+    @goal_comment = GoalComment.find(params.fetch("id_to_remove"))
+
+    @goal_comment.destroy
+
+    redirect_to("/users/#{@goal_comment.author_id}", notice: "GoalComment deleted successfully.")
+  end
+
+  def destroy_row_from_goal
+    @goal_comment = GoalComment.find(params.fetch("id_to_remove"))
+
+    @goal_comment.destroy
+
+    redirect_to("/goals/#{@goal_comment.goal_id}", notice: "GoalComment deleted successfully.")
+  end
+
   def destroy_row
     @goal_comment = GoalComment.find(params.fetch("id_to_remove"))
 

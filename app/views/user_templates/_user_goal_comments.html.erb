@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Goal Comments
+
+    <a data-toggle="collapse" href="#user_goal_comments_new_form">
+      Add goal comment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.goal_comments.each do |goal_comment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/goal_comments/<%= goal_comment.id %>">
+          <%= goal_comment.comment %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

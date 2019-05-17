@@ -55,6 +55,22 @@ class PlanCommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_author
+    @plan_comment = PlanComment.find(params.fetch("id_to_remove"))
+
+    @plan_comment.destroy
+
+    redirect_to("/users/#{@plan_comment.author_id}", notice: "PlanComment deleted successfully.")
+  end
+
+  def destroy_row_from_plan
+    @plan_comment = PlanComment.find(params.fetch("id_to_remove"))
+
+    @plan_comment.destroy
+
+    redirect_to("/plans/#{@plan_comment.plan_id}", notice: "PlanComment deleted successfully.")
+  end
+
   def destroy_row
     @plan_comment = PlanComment.find(params.fetch("id_to_remove"))
 

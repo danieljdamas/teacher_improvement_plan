@@ -53,6 +53,22 @@ class CoachInvitationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_coach
+    @coach_invitation = CoachInvitation.find(params.fetch("id_to_remove"))
+
+    @coach_invitation.destroy
+
+    redirect_to("/users/#{@coach_invitation.coach_id}", notice: "CoachInvitation deleted successfully.")
+  end
+
+  def destroy_row_from_plan
+    @coach_invitation = CoachInvitation.find(params.fetch("id_to_remove"))
+
+    @coach_invitation.destroy
+
+    redirect_to("/plans/#{@coach_invitation.plan_id}", notice: "CoachInvitation deleted successfully.")
+  end
+
   def destroy_row
     @coach_invitation = CoachInvitation.find(params.fetch("id_to_remove"))
 
