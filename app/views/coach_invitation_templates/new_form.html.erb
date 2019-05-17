@@ -1,0 +1,45 @@
+<h1>
+  Add a new coach invitation
+</h1>
+
+
+<hr>
+
+<!-- Form coach_invitation start -->
+<form action="/create_coach_invitation" method="post">
+<!-- Form coach_invitation end -->
+
+  <!-- Label and input for coach_id start -->
+  <div class="form-group">
+    <label for="coach_id">
+      Coach
+    </label>
+
+    <!-- Input for coach_id start -->
+    <input type="text" id="coach_id" name="coach_id" class="form-control">
+    <!-- Input for coach_id end -->
+  </div>
+  <!-- Label and input for coach_id end -->
+
+  <!-- Label and input for plan_id start -->
+  <div class="form-group">
+    <label for="plan_id">
+      Plan
+    </label>
+
+    <!-- Input for plan_id start -->
+    <input type="text" id="plan_id" name="plan_id" class="form-control">
+    <!-- Input for plan_id end -->
+  </div>
+  <!-- Label and input for plan_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create coach invitation
+  </button>
+</form>
+
+<hr>
+
+<a href="/coach_invitations">
+  Go back
+</a>

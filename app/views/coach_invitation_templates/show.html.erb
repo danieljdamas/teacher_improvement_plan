@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Coach invitation #<%= @coach_invitation.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/coach_invitations" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link coach_invitation start -->
+      <div class="col">
+        <a href="/coach_invitations/<%= @coach_invitation.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit coach invitation
+        </a>
+      </div>
+      <!-- Edit link coach_invitation end -->
+
+      <!-- Delete link coach_invitation start -->
+      <div class="col">
+        <a href="/delete_coach_invitation/<%= @coach_invitation.id %>" class="btn btn-block btn-outline-secondary">
+          Delete coach invitation
+        </a>
+      </div>
+      <!-- Delete link coach_invitation end -->
+    </div>
+
+    <dl>
+      <dt>
+        Coach
+      </dt>
+      <!-- Display coach_id start -->
+      <dd>
+        <%= @coach_invitation.coach_id %>
+      </dd>
+      <!-- Display coach_id end -->
+
+      <dt>
+        Plan
+      </dt>
+      <!-- Display plan_id start -->
+      <dd>
+        <%= @coach_invitation.plan_id %>
+      </dd>
+      <!-- Display plan_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@coach_invitation.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@coach_invitation.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

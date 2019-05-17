@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Coach invitation resource:
+
+  # CREATE
+  get("/coach_invitations/new", { :controller => "coach_invitations", :action => "new_form" })
+  post("/create_coach_invitation", { :controller => "coach_invitations", :action => "create_row" })
+
+  # READ
+  get("/coach_invitations", { :controller => "coach_invitations", :action => "index" })
+  get("/coach_invitations/:id_to_display", { :controller => "coach_invitations", :action => "show" })
+
+  # UPDATE
+  get("/coach_invitations/:prefill_with_id/edit", { :controller => "coach_invitations", :action => "edit_form" })
+  post("/update_coach_invitation/:id_to_modify", { :controller => "coach_invitations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_coach_invitation/:id_to_remove", { :controller => "coach_invitations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Action step resource:
 
   # CREATE
