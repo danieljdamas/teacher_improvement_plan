@@ -4,6 +4,8 @@ RSpec.describe Plan, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:plan_comments) }
+
     it { should have_many(:coaches) }
 
     it { should have_many(:goals) }
