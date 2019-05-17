@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :plan_comments,
+             :foreign_key => "author_id",
+             :dependent => :destroy
+
   has_many   :coach_invitations,
              :foreign_key => "coach_id",
              :dependent => :destroy
