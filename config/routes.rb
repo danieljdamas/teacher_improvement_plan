@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Goal comment resource:
+
+  # CREATE
+  get("/goal_comments/new", { :controller => "goal_comments", :action => "new_form" })
+  post("/create_goal_comment", { :controller => "goal_comments", :action => "create_row" })
+
+  # READ
+  get("/goal_comments", { :controller => "goal_comments", :action => "index" })
+  get("/goal_comments/:id_to_display", { :controller => "goal_comments", :action => "show" })
+
+  # UPDATE
+  get("/goal_comments/:prefill_with_id/edit", { :controller => "goal_comments", :action => "edit_form" })
+  post("/update_goal_comment/:id_to_modify", { :controller => "goal_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_goal_comment/:id_to_remove", { :controller => "goal_comments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Plan comment resource:
 
   # CREATE

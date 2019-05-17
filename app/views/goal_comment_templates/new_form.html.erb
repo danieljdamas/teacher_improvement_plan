@@ -1,0 +1,57 @@
+<h1>
+  Add a new goal comment
+</h1>
+
+
+<hr>
+
+<!-- Form goal_comment start -->
+<form action="/create_goal_comment" method="post">
+<!-- Form goal_comment end -->
+
+  <!-- Label and input for comment start -->
+  <div class="form-group">
+    <label for="comment">
+      Comment
+    </label>
+
+    <!-- Input for comment start -->
+    <textarea id="comment" name="comment" class="form-control" rows="3"></textarea>
+    <!-- Input for comment end -->
+  </div>
+  <!-- Label and input for comment end -->
+
+  <!-- Label and input for author_id start -->
+  <div class="form-group">
+    <label for="author_id">
+      Author
+    </label>
+
+    <!-- Input for author_id start -->
+    <input type="text" id="author_id" name="author_id" class="form-control">
+    <!-- Input for author_id end -->
+  </div>
+  <!-- Label and input for author_id end -->
+
+  <!-- Label and input for goal_id start -->
+  <div class="form-group">
+    <label for="goal_id">
+      Goal
+    </label>
+
+    <!-- Input for goal_id start -->
+    <input type="text" id="goal_id" name="goal_id" class="form-control">
+    <!-- Input for goal_id end -->
+  </div>
+  <!-- Label and input for goal_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create goal comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/goal_comments">
+  Go back
+</a>
