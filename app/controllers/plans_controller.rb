@@ -47,7 +47,7 @@ class PlansController < ApplicationController
 
     @plan.description = params.fetch("description")
     @plan.status = params.fetch("status")
-    @plan.owner_id = params.fetch("owner_id")
+    
 
     if @plan.valid?
       @plan.save
