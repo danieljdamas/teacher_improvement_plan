@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Plan comment resource:
+
+  # CREATE
+  get("/plan_comments/new", { :controller => "plan_comments", :action => "new_form" })
+  post("/create_plan_comment", { :controller => "plan_comments", :action => "create_row" })
+
+  # READ
+  get("/plan_comments", { :controller => "plan_comments", :action => "index" })
+  get("/plan_comments/:id_to_display", { :controller => "plan_comments", :action => "show" })
+
+  # UPDATE
+  get("/plan_comments/:prefill_with_id/edit", { :controller => "plan_comments", :action => "edit_form" })
+  post("/update_plan_comment/:id_to_modify", { :controller => "plan_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_plan_comment/:id_to_remove", { :controller => "plan_comments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Coach invitation resource:
 
   # CREATE

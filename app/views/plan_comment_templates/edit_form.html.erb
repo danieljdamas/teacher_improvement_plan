@@ -1,0 +1,56 @@
+<h1>
+  Edit plan comment #<%= @plan_comment.id %>
+</h1>
+
+<hr>
+
+<!-- Form plan_comment start -->
+<form action="/update_plan_comment/<%= @plan_comment.id %>" method="post">
+<!-- Form plan_comment end -->
+
+  <!-- Label and input for comment start -->
+  <div class="form-group">
+    <label for="comment">
+      Comment
+    </label>
+
+    <!-- Input for comment start -->
+    <textarea id="comment" name="comment" class="form-control" rows="3"><%= @plan_comment.comment %></textarea>
+    <!-- Input for comment end -->
+  </div>
+  <!-- Label and input for comment end -->
+
+  <!-- Label and input for author_id start -->
+  <div class="form-group">
+    <label for="author_id">
+      Author
+    </label>
+
+    <!-- Input for author_id start -->
+    <input type="text" id="author_id" name="author_id" class="form-control" value="<%= @plan_comment.author_id %>">
+    <!-- Input for author_id end -->
+  </div>
+  <!-- Label and input for author_id end -->
+
+  <!-- Label and input for plan_id start -->
+  <div class="form-group">
+    <label for="plan_id">
+      Plan
+    </label>
+
+    <!-- Input for plan_id start -->
+    <input type="text" id="plan_id" name="plan_id" class="form-control" value="<%= @plan_comment.plan_id %>">
+    <!-- Input for plan_id end -->
+  </div>
+  <!-- Label and input for plan_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update plan comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/plan_comments">
+  Go back
+</a>
