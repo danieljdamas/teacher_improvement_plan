@@ -32,6 +32,21 @@ class CoachInvitationsController < ApplicationController
     end
   end
 
+  def create_row_from_plan
+    @coach_invitation = CoachInvitation.new
+
+    @coach_invitation.coach_id = params.fetch("coach_id")
+    @coach_invitation.plan_id = params.fetch("plan_id")
+
+    if @coach_invitation.valid?
+      @coach_invitation.save
+
+      redirect_to("/plans/#{@coach_invitation.plan_id}", notice: "CoachInvitation created successfully.")
+    else
+      render("coach_invitation_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @coach_invitation = CoachInvitation.find(params.fetch("prefill_with_id"))
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/goal_comments/new", { :controller => "goal_comments", :action => "new_form" })
   post("/create_goal_comment", { :controller => "goal_comments", :action => "create_row" })
+  post("/create_goal_comment_from_goal", { :controller => "goal_comments", :action => "create_row_from_goal" })
 
   # READ
   get("/goal_comments", { :controller => "goal_comments", :action => "index" })
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/plan_comments/new", { :controller => "plan_comments", :action => "new_form" })
   post("/create_plan_comment", { :controller => "plan_comments", :action => "create_row" })
+  post("/create_plan_comment_from_plan", { :controller => "plan_comments", :action => "create_row_from_plan" })
 
   # READ
   get("/plan_comments", { :controller => "plan_comments", :action => "index" })
@@ -49,6 +51,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/coach_invitations/new", { :controller => "coach_invitations", :action => "new_form" })
   post("/create_coach_invitation", { :controller => "coach_invitations", :action => "create_row" })
+  post("/create_coach_invitation_from_plan", { :controller => "coach_invitations", :action => "create_row_from_plan" })
 
   # READ
   get("/coach_invitations", { :controller => "coach_invitations", :action => "index" })
@@ -70,6 +73,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/action_steps/new", { :controller => "action_steps", :action => "new_form" })
   post("/create_action_step", { :controller => "action_steps", :action => "create_row" })
+  post("/create_action_step_from_goal", { :controller => "action_steps", :action => "create_row_from_goal" })
 
   # READ
   get("/action_steps", { :controller => "action_steps", :action => "index" })
@@ -90,6 +94,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/goals/new", { :controller => "goals", :action => "new_form" })
   post("/create_goal", { :controller => "goals", :action => "create_row" })
+  post("/create_goal_from_plan", { :controller => "goals", :action => "create_row_from_plan" })
 
   # READ
   get("/goals", { :controller => "goals", :action => "index" })

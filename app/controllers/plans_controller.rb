@@ -6,6 +6,9 @@ class PlansController < ApplicationController
   end
 
   def show
+    @plan_comment = PlanComment.new
+    @coach_invitation = CoachInvitation.new
+    @goal = Goal.new
     @plan = Plan.find(params.fetch("id_to_display"))
 
     render("plan_templates/show.html.erb")

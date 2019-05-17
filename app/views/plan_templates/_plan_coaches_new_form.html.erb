@@ -1,0 +1,25 @@
+<!-- Form coach_invitation start -->
+<form action="/create_coach_invitation_from_plan" method="post">
+<!-- Form coach_invitation end -->
+
+  <!-- Label and input for coach_id start -->
+  <div class="form-group">
+    <label for="coach_id">
+      Coach
+    </label>
+
+    <!-- Input for coach_id start -->
+    <input type="text" id="coach_id" name="coach_id" class="form-control" value="<%= @coach_invitation.coach_id %>">
+    <!-- Input for coach_id end -->
+  </div>
+  <!-- Label and input for coach_id end -->
+
+  <!-- Label and input for plan_id start -->
+  <!-- Input for plan_id start -->
+  <input type="hidden" name="plan_id" value="<%= @plan.id %>">
+  <!-- Input for plan_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create coach invitation
+  </button>
+</form>

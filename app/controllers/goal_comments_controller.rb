@@ -33,6 +33,22 @@ class GoalCommentsController < ApplicationController
     end
   end
 
+  def create_row_from_goal
+    @goal_comment = GoalComment.new
+
+    @goal_comment.comment = params.fetch("comment")
+    @goal_comment.author_id = params.fetch("author_id")
+    @goal_comment.goal_id = params.fetch("goal_id")
+
+    if @goal_comment.valid?
+      @goal_comment.save
+
+      redirect_to("/goals/#{@goal_comment.goal_id}", notice: "GoalComment created successfully.")
+    else
+      render("goal_comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @goal_comment = GoalComment.find(params.fetch("prefill_with_id"))
 

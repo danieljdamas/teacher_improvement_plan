@@ -33,6 +33,22 @@ class PlanCommentsController < ApplicationController
     end
   end
 
+  def create_row_from_plan
+    @plan_comment = PlanComment.new
+
+    @plan_comment.comment = params.fetch("comment")
+    @plan_comment.author_id = params.fetch("author_id")
+    @plan_comment.plan_id = params.fetch("plan_id")
+
+    if @plan_comment.valid?
+      @plan_comment.save
+
+      redirect_to("/plans/#{@plan_comment.plan_id}", notice: "PlanComment created successfully.")
+    else
+      render("plan_comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @plan_comment = PlanComment.find(params.fetch("prefill_with_id"))
 
