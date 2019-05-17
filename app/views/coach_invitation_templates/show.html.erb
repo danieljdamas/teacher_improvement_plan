@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link coach_invitation start -->
       <div class="col">
         <a href="/coach_invitations/<%= @coach_invitation.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit coach invitation
         </a>
       </div>
-      <!-- Edit link coach_invitation end -->
 
-      <!-- Delete link coach_invitation start -->
       <div class="col">
         <a href="/delete_coach_invitation/<%= @coach_invitation.id %>" class="btn btn-block btn-outline-secondary">
           Delete coach invitation
         </a>
       </div>
-      <!-- Delete link coach_invitation end -->
     </div>
 
     <dl>
       <dt>
         Coach
       </dt>
-      <!-- Display coach_id start -->
       <dd>
         <% if @coach_invitation.coach.present? %>
           <a href="/users/<%= @coach_invitation.coach_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display coach_id end -->
 
       <dt>
         Plan
       </dt>
-      <!-- Display plan_id start -->
       <dd>
         <% if @coach_invitation.plan.present? %>
           <a href="/plans/<%= @coach_invitation.plan_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display plan_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@coach_invitation.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@coach_invitation.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

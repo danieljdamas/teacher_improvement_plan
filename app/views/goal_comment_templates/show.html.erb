@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link goal_comment start -->
       <div class="col">
         <a href="/goal_comments/<%= @goal_comment.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit goal comment
         </a>
       </div>
-      <!-- Edit link goal_comment end -->
 
-      <!-- Delete link goal_comment start -->
       <div class="col">
         <a href="/delete_goal_comment/<%= @goal_comment.id %>" class="btn btn-block btn-outline-secondary">
           Delete goal comment
         </a>
       </div>
-      <!-- Delete link goal_comment end -->
     </div>
 
     <dl>
       <dt>
         Comment
       </dt>
-      <!-- Display comment start -->
       <dd>
         <%= @goal_comment.comment %>
       </dd>
-      <!-- Display comment end -->
 
       <dt>
         Author
       </dt>
-      <!-- Display author_id start -->
       <dd>
         <% if @goal_comment.author.present? %>
           <a href="/users/<%= @goal_comment.author_id %>">
@@ -49,12 +42,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display author_id end -->
 
       <dt>
         Goal
       </dt>
-      <!-- Display goal_id start -->
       <dd>
         <% if @goal_comment.goal.present? %>
           <a href="/goals/<%= @goal_comment.goal_id %>">
@@ -62,28 +53,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display goal_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@goal_comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@goal_comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

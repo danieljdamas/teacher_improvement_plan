@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @goal.goal_comments.each do |goal_comment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/goal_comments/<%= goal_comment.id %>">
           <%= goal_comment.comment %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_goal_comment_from_goal/<%= goal_comment.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="goal_goal_comments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "goal_templates/goal_goal_comments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

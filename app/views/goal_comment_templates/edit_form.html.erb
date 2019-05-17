@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form goal_comment start -->
 <form action="/update_goal_comment/<%= @goal_comment.id %>" method="post">
-<!-- Form goal_comment end -->
 
-  <!-- Label and input for comment start -->
   <div class="form-group">
     <label for="comment">
       Comment
     </label>
 
-    <!-- Input for comment start -->
     <textarea id="comment" name="comment" class="form-control" rows="3"><%= @goal_comment.comment %></textarea>
-    <!-- Input for comment end -->
   </div>
-  <!-- Label and input for comment end -->
 
-  <!-- Label and input for author_id start -->
   <div class="form-group">
     <label for="author_id">
       Author
     </label>
 
-    <!-- Input for author_id start -->
     <%= select_tag(:author_id, options_from_collection_for_select(User.all, :id, :email, @goal_comment.author_id), :class => "form-control") %>
-    <!-- Input for author_id end -->
   </div>
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for goal_id start -->
   <div class="form-group">
     <label for="goal_id">
       Goal
     </label>
 
-    <!-- Input for goal_id start -->
     <%= select_tag(:goal_id, options_from_collection_for_select(Goal.all, :id, :description, @goal_comment.goal_id), :class => "form-control") %>
-    <!-- Input for goal_id end -->
   </div>
-  <!-- Label and input for goal_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update goal comment
